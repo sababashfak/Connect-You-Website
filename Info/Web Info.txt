@@ -1,0 +1,27 @@
+Website Development Related Details Info
+
+
+A. Set UP Section:
+    1. Install Tailwind (Framework Guides>> Vite >> Using React) (Link: https://tailwindcss.com/docs/guides/vite)
+    2. Install npm inside the frontend projects (Using terminal>>npm install)
+    3. Import Fonts From Google Fonts and Put the web code of inside the style tag have to keep in App.css file (Link: https://fonts.google.com/specimen/Inter)
+    4. Install React Router (npm install react-router-dom@6): (Link: https://reactrouter.com/en/main/start/tutorial)
+        a. Install from Terminal:   cd <your new project directory>
+                                    npm install react-router-dom
+                                    npm install localforage match-sorter sort-by
+        b. Create a folder inside the src folder and create a file inside the router folder. 
+        c. Keep this code inside the router file: 
+            import { createBrowserRouter } from "react-router-dom";
+
+            const router = createBrowserRouter ([
+                {
+                path: "/",
+                element: <div>Hello world!</div> ,
+                },
+            ]);
+
+            export default router; 
+
+    5. Install daisyUI using Terminal>> npm i -D daisyui@latest (Use daisyUI for NavBar (Link: https://daisyui.com/components/))
+        a. Follow the steps in the tutorial Sections
+        b. Copy Resposive Navbar code (JSX Format) and paste it inside the NavBar.jsx File inside Return() and keep the code inside Header Tag
