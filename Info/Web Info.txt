@@ -25,3 +25,4 @@ A. Set UP Section:
     5. Install daisyUI using Terminal>> npm i -D daisyui@latest (Use daisyUI for NavBar (Link: https://daisyui.com/components/))
         a. Follow the steps in the tutorial Sections
         b. Copy Resposive Navbar code (JSX Format) and paste it inside the NavBar.jsx File inside Return() and keep the code inside Header Tag
+    6. If we want to use icons we have to install react icons (Link: https://react-icons.github.io/react-icons/)
