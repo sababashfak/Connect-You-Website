@@ -1,8 +1,30 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import logo from '/logo.png'
 import { IoPersonOutline } from "react-icons/io5";
 
 const NavBar = () => {
+    const [isSticky, setSticky] = useState(false);
+
+    // Handle Scroll Functions (NavBar Shaddow Effect)
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if(offset > 0){
+                setSticky(true)
+            }
+            else{
+                setSticky(false)
+            }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+        window.addEventListener("scroll", handleScroll);
+    }
+
+
+
+}, [])
     const navItems = (
         <>
         <li><a href='/'>Home</a></li>
@@ -41,8 +63,8 @@ const NavBar = () => {
         </>
     )
     return (
-        <header className='max-w-screen-2xl container mx-auto'>
-            <div className="navbar xl:px-24">
+        <header className='max-w-screen-2xl container mx-auto fixed top-0 left-0 right-0 transition-all duration-300 ease-in-out'>
+            <div className= {'navbar xl:px-24 ${isSticky ? "shadow-md bg-base-100 transition-all duration-300 ease-in-out"}'}>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +76,7 @@ const NavBar = () => {
                                 stroke="currentColor">
                                 <path
                                     strokeLinecap="round"
-                                    strokeLinejoin="round"
+                                    strokeLinejoin=  "round"
                                     strokeWidth="2"
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
@@ -65,8 +87,8 @@ const NavBar = () => {
                            {navItems}
                         </ul>
                     </div>
-                    <a href='/' className='bg-slate-400 '>
-                        <img src={logo} alt="Logo" />
+                    <a href='/' >
+                        <img src={logo} alt="Logo" className='flex-auto md:flex'/>
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -108,7 +130,7 @@ const NavBar = () => {
                     <span className="badge badge-sm indicator-item">8</span>
                     </div>
                     </div>
-                    <a className="btn bg-orange rounded-full px-6 text-white flex items-center gap-2"><IoPersonOutline /> SignUp / Login</a>
+                    <a className="btn bg-orange rounded-full px-6 text-white flex mx-auto items-center gap-2"><span className='hidden xl:flex'><IoPersonOutline /></span>SignUp / Login</a>
                 </div>
             </div>
         </header>

@@ -1,1 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+
+body{
+
+}
+
+.section-container {
+    @apply max-w-screen-2xl container mx-auto xl:px-24 px-4;
+}
+
+.subtitle {
+    @apply text-red uppercase tracking-wide font-medium text-lg;
+}
+
+.title {
+    @apply text-4xl md:text-5xl font-bold my-2 md:leading-snug leading-snug
+}

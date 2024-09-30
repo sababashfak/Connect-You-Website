@@ -15,8 +15,11 @@ export default {
       },
       fontFamily: {
         "primary" : ['Inter', 'sans-serif']
-      }
-
+      },
+      screens: {
+        'big-desktop': '2200px',
+        // => @media (min-width: 1280px) { ... }
+      },
 
     },
   },
