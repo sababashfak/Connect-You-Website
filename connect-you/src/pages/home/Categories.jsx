@@ -33,12 +33,12 @@ const Categories = () => {
         <div className='flex flex-col sm:flex-row flew-wrap gap-8 justify-around items-center mt-12'>
             {
                 categoryItems.map((item, i) => (
-                    <div key={i}  className='shadow-lg rounded-md bg-white py-6  w-72 mx-auto text-center cursor-pointer hover:-translate-y-4 duration-300 transition-all'>
+                    <div key={i}  className='shadow-lg rounded-md bg-light-orange py-6  w-72 mx-auto text-center cursor-pointer hover:-translate-y-4 duration-300 transition-all'>
                         <div className='flex w-full mx-auto items-center justify-center'>
-                            <img src={item.image} alt= "" className=' w-72 h-48'></img>
+                            <img src={item.image} alt= "" className=' w-72 h-50'></img>
                         </div>
                         <div className='mt-5 space-y-5'>
-                            <h5>{item.title}</h5>
+                            <h5 className='font-semibold '>{item.title}</h5>
                             <p>{item.des}</p>
                         </div>
                     </div>

@@ -27,7 +27,7 @@ const NavBar = () => {
 }, [])
     const navItems = (
         <>
-        <li><a href='/'>Home</a></li>
+        <li><a href='/' className='text-orange'>Home</a></li>
         <li>
             <details>
                 <summary>Events</summary>

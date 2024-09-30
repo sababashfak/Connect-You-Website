@@ -26,3 +26,5 @@ A. Set UP Section:
         a. Follow the steps in the tutorial Sections
         b. Copy Resposive Navbar code (JSX Format) and paste it inside the NavBar.jsx File inside Return() and keep the code inside Header Tag
     6. If we want to use icons we have to install react icons (Link: https://react-icons.github.io/react-icons/)
+    7. To use Slack System we use React Slick here in the Featured Events Section
+        a. Intasll React Slick following the web tutorial (Link: https://react-slick.neostack.com/docs/get-started)

@@ -10,6 +10,7 @@ export default {
         "green" : "#39DB4A",
         "red" : "#FF6868",
         "orange" : "#FF7F30",
+        "light-orange" : "#f1d7c1",
         "secondary" : '#555',
         "primaryBG" : "#FCFCFC"
       },
