@@ -7,19 +7,20 @@ import {FaHeart} from "react-icons/fa"
 const Cards = ({event}) => {
     const [isFavorite, setFavorite] = useState(false);
 
-    const handleFavClick = (e) => {
+    const handleFavClick = () => {
         //e.stopPropagation();
         setFavorite(!isFavorite);
         //console.log("Checking Onclick");
     }
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="card bg-base-100 w-96 shadow-xl relative">
 
-        <div className={'rating gap-1 absolute right-2 top-2 p-4 heartstar bg-orange ${isFavorite ? "text-rose-500" : "text-white"}'}
-        onClick ={handleFavClick}
+        {/** Use backtic(`) instead of single quote(') and the ifFavorite is working now */}
+        <div className={`rating gap-1 absolute right-2 top-2 p-4 heartStar bg-orange ${isFavorite ? "text-rose-500" : "text-white"}`}
+        onClick = {handleFavClick}
         //style={{ cursor: 'pointer' }}
         >
-            <FaHeart className='h-5 w-5 cursor-pointer'/>
+            <FaHeart className= 'h-5 w-5 cursor-pointer '/>
         </div>
         
         <figure>

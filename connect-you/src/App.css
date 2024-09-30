@@ -15,9 +15,13 @@ body{
 }
 
 .title {
-    @apply text-4xl md:text-5xl font-bold my-2 md:leading-snug leading-snug
+    @apply text-4xl md:text-5xl font-bold my-2 md:leading-snug leading-snug;
 }
 
 .rating {
     z-index: 10; /* Ensure it's on top of other elements */
+}
+
+.heartStar {
+    border-radius: 0px 28px 0px 28px;
 }
