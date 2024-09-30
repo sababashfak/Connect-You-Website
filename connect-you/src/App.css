@@ -17,3 +17,7 @@ body{
 .title {
     @apply text-4xl md:text-5xl font-bold my-2 md:leading-snug leading-snug
 }
+
+.rating {
+    z-index: 10; /* Ensure it's on top of other elements */
+}
