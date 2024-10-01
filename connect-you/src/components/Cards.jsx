@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from "react-router-dom"
 import { MdDateRange } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { GrOrganization } from "react-icons/gr";
@@ -22,17 +23,21 @@ const Cards = ({event}) => {
         >
             <FaHeart className= 'h-5 w-5 cursor-pointer '/>
         </div>
+        <Link to={`/events/${event._id}`}> 
+            <figure>
+                <img
+                src={event.image}
+                alt={event.title} 
+                className='hover:scale-105 transition-all duration-200 md:h-72'
+                />
+            </figure>
+        </Link>
         
-        <figure>
-            <img
-            src={event.image}
-            alt={event.title} 
-            className='hover:scale-105 transition-all duration-200 md:h-72'
-            />
-        </figure>
 
         <div className="card-body">
-            <h2 className="card-title">{event.title}</h2>
+            <Link to={`/events/${event._id}`}>
+                <h2 className="card-title">{event.title}</h2>
+            </Link>
             <div className='flex space-x-2'>
                 <a><MdDateRange/></a><a>{event.date}</a>
             </div> 
