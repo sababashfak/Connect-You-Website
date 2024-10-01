@@ -6,7 +6,7 @@ import Cards from '../../components/Cards';
 import { } from "react-icons/fa6"
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 
-const simpleNextArrow = (props) => {
+const SimpleNextArrow = (props) => {
   const {className, style, onClick} = props;
   return(
     <div className={className} style={{...style, display: "block", background: "red"}} 
@@ -15,7 +15,7 @@ const simpleNextArrow = (props) => {
   );
 };
 
-const simplePrevArrow = (props) => {
+const SimplePrevArrow = (props) => {
   const {className, style, onClick} = props;
   return(
     <div className={className} style={{...style, display: "block", background: "green"}} 
@@ -74,8 +74,8 @@ function FeaturedEvents() {
         }
       }
     ],
-    nextArrow: <simpleNextArrow/>,
-    prevArrow: <simplePrevArrow/>
+    nextArrow: <SimpleNextArrow/>,
+    prevArrow: <SimplePrevArrow/>
   };
 
 

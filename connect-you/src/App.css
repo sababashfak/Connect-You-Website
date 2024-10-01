@@ -6,6 +6,10 @@ body{
 
 }
 
+.navBar{
+    z-index: 100; /* Ensure it's on top of other elements */
+}
+
 .section-container {
     @apply max-w-screen-2xl container mx-auto xl:px-24 px-4;
 }
