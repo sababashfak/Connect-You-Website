@@ -27,10 +27,9 @@ const Footer = () => {
           <a className="link link-hover">Blog</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Legal</h6>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <h6 className="footer-title">Contact Info</h6>
+          <a className="link link-hover">sababashfak.fahim1999@gmail.com</a>
+          <a className="link link-hover">+880 1790-862914</a>
         </nav>
       </footer>
 
