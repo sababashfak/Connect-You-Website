@@ -5,7 +5,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { GrOrganization } from "react-icons/gr";
 import {FaHeart} from "react-icons/fa"
 
-const Cards = ({event}) => {
+const Cards = ({ev}) => {
     const [isFavorite, setFavorite] = useState(false);
 
     const handleFavClick = () => {
@@ -23,11 +23,11 @@ const Cards = ({event}) => {
         >
             <FaHeart className= 'h-5 w-5 cursor-pointer '/>
         </div>
-        <Link to={`/events/${event._id}`}> 
+        <Link to={`/events/${ev._id}`}> 
             <figure>
                 <img
-                src={event.image}
-                alt={event.title} 
+                src={ev.image}
+                alt={ev.title} 
                 className='hover:scale-105 transition-all duration-200 md:h-72'
                 />
             </figure>
@@ -35,20 +35,20 @@ const Cards = ({event}) => {
         
 
         <div className="card-body">
-            <Link to={`/events/${event._id}`}>
-                <h2 className="card-title">{event.title}</h2>
+            <Link to={`/events/${ev._id}`}>
+                <h2 className="card-title">{ev.title}</h2>
             </Link>
             <div className='flex space-x-2'>
-                <a><MdDateRange/></a><a>{event.date}</a>
+                <a><MdDateRange/></a><a>{ev.date}</a>
             </div> 
             <div className='flex space-x-2'>
-                <a><IoLocationOutline/></a><a>{event.location}</a>
+                <a><IoLocationOutline/></a><a>{ev.location}</a>
             </div>
             <div className='flex space-x-2'>
-                <a><GrOrganization/></a><a>{event.company}</a>
+                <a><GrOrganization/></a><a>{ev.company}</a>
             </div>
             <div className="card-actions justify-between items-center mt-2">
-                <h5 className='font-semibold'>Starting From <span className='font-semibold'>BDT</span> {event.price}.00</h5>
+                <h5 className='font-semibold'>Starting From <span className='font-semibold'>BDT</span> {ev.price}.00</h5>
                 <button className="btn bg-orange text-white">Registration</button>
             </div>
         </div>

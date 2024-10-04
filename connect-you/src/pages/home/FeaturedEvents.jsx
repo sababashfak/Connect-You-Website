@@ -108,7 +108,7 @@ function FeaturedEvents() {
         <Slider ref={slider} {...settings} className='overflow-hidden mt-10 space-x-5'>
         {
           events.map((item,i) => (
-            <Cards key={i} event={item}/>
+            <Cards key={i} ev={item}/>
           ))
         }
       </Slider>
