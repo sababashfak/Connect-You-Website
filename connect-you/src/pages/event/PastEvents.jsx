@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Cards from "../../components/Cards";
 import { FaFilter } from "react-icons/fa";
 
-const Event = () => {
+const PastEvents = () => {
   const [event, setEvent] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -10,22 +10,29 @@ const Event = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [eventsPerPage] = useState(9);
 
+  //Past Event Checking
+  const isPastEvent = (eventDate) => {
+    const currentDate = new Date();
+    const eventDateObject = new Date(eventDate);
+    //console.log(`Today's Date: ${currentDate}`);
+    //console.log(`Event Date: ${eventDateObject}`);
+    //console.log(`${eventDateObject < currentDate}`);
+    return eventDateObject < currentDate; // true if event date is in the past
+  };
   //loading data
   useEffect(() => {
-    //fetch data from the backened
     const fetchData = async () => {
       try {
         const response = await fetch("/events.json");
         const data = await response.json();
-        //console.log(data)
+        const pastEventsFiltered = data.filter((ev) => isPastEvent(ev.date));
         setEvent(data);
-        setFilteredEvents(data);
+        setFilteredEvents(pastEventsFiltered); // Set filteredEvents to past events
       } catch (error) {
         console.log("Error fetching data", error);
       }
     };
-
-    //call the function
+  
     fetchData();
   }, []);
 
@@ -34,7 +41,9 @@ const Event = () => {
     const filtered =
       category === "all"
         ? event
-        : event.filter((ev1) => ev1.category === category);
+        : event.filter(
+            (ev1) => ev1.category === category && isPastEvent(ev1.date)
+          );
 
     setFilteredEvents(filtered);
     setSelectedCategory(category);
@@ -44,9 +53,9 @@ const Event = () => {
 
   // Show all data
   const showAll = () => {
-    setFilteredEvents(event);
+    const pastEventsFiltered = event.filter((ev) => isPastEvent(ev.date));
+    setFilteredEvents(pastEventsFiltered);
     setSelectedCategory("all");
-
     setCurrentPage(1);
   };
 
@@ -89,10 +98,20 @@ const Event = () => {
 
   // pagination logic
 
-   const indexOfLastEvent = currentPage * eventsPerPage;
-   const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
-   const currentEvents = filteredEvents.slice(indexOfFirstEvent, indexOfLastEvent);
-   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const indexOfLastEvent = currentPage * eventsPerPage;
+
+  const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+  
+  const currentEvents = filteredEvents.slice(indexOfFirstEvent, indexOfLastEvent);
+
+
+  //const indexOfLastEvent = currentPage * eventsPerPage;
+  //const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+//   const currentEvents = filteredEvents.slice(
+//     indexOfFirstEvent,
+//     indexOfLastEvent
+//   );
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
@@ -103,7 +122,7 @@ const Event = () => {
         <div className="py-48 md:flex flex-col  justify-center items-center gap-8">
           <div className="text-center space-y-7 px-4">
             <h2 className="primary md:text-5xl text-4xl font-bold md:leading-snug leading-snug">
-              Discover Events That Inspire, Engage and{" "}
+              Discover Events That You Missed Could{" "}
               <span className="text-orange">Connect You </span>
             </h2>
 
@@ -190,8 +209,8 @@ const Event = () => {
           </div>
         </div>
         {/* <div className="flex h-3">
-
-          </div> */}
+  
+            </div> */}
         {/* Event Cards */}
         <div className="grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ">
           {currentEvents.map((ev) => (
@@ -202,19 +221,21 @@ const Event = () => {
 
       {/* pagination section */}
       <div className="flex justify-center my-8">
-       {
-         Array.from({length: Math.ceil(filteredEvents.length / eventsPerPage)}).map((_, index) => (
-          <button key={index +1} 
-          onClick={() => paginate(index+1) }
-          className={`mx-1 px-3 py-1 rounded-full ${currentPage === index+1 ? "bg-orange text-white" : "bg-gray-200" }`}
+        {Array.from({
+          length: Math.ceil(filteredEvents.length / eventsPerPage),
+        }).map((_, index) => (
+          <button
+            key={index + 1}
+            onClick={() => paginate(index + 1)}
+            className={`mx-1 px-3 py-1 rounded-full ${
+              currentPage === index + 1 ? "bg-orange text-white" : "bg-gray-200"
+            }`}
           >
             {index + 1}
           </button>
-         ))
-       }
+        ))}
       </div>
     </div>
   );
 };
-
-export default Event;
+export default PastEvents;
