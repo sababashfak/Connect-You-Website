@@ -27,7 +27,7 @@ const Banner = () => {
                     Create Event
                 </button>
                 <button className='btn flex-auto md:flex-initial bg-transparent px-8 py-3 font-semibold text-black rounded-full'>
-                    Find Event
+                    <a href='/event'>Find Event</a>
                 </button>
             </div>
             </div>

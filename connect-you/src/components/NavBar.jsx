@@ -32,9 +32,9 @@ const NavBar = () => {
             <details>
                 <summary>Events</summary>
                 <ul className="p-2">
-                    <li><a>All Events</a></li>
-                    <li><a>Upcoming Events</a></li>
-                    <li><a>Past Events</a></li>
+                    <li><a href='/event'>All Events</a></li>
+                    <li><a href='/upcomingEvent'>Upcoming Events</a></li>
+                    <li><a href='/pastEvent'>Past Events</a></li>
                     
                     
                 </ul>
