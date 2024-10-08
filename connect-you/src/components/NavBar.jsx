@@ -44,14 +44,13 @@ const NavBar = () => {
             <details>
                 <summary>Find Event</summary>
                 <ul className="p-2">
-                    <li><a>Search From All</a></li>
-                    <li><a>Reunion</a></li>
-                    <li><a>Univarsity</a></li>
-                    <li><a>Music / Concert</a></li>
-                    <li><a>Festival</a></li>
-                    <li><a>Skill Development</a></li>
-                    <li><a>Business</a></li>
-                    <li><a>Travel</a></li>
+                    <li><a href='/event'>Search From All</a></li>
+                    <li><a href='/reunion'>Reunion</a></li>
+                    <li><a href='/music'>Music / Concert</a></li>
+                    <li><a href='/fest'>Festival</a></li>
+                    <li><a href='/skill'>Skill Development</a></li>
+                    <li><a href='/seminar'>Seminar</a></li>
+                    <li><a href='/expo'>Expo</a></li>
                     
                     
                 </ul>
@@ -130,7 +129,7 @@ const NavBar = () => {
                     <span className="badge badge-sm indicator-item">8</span>
                     </div>
                     </div>
-                    <a className="btn bg-orange rounded-full px-6 text-white flex mx-auto items-center gap-2"><span className='hidden xl:flex'><IoPersonOutline /></span>SignUp / Login</a>
+                    <a className="btn bg-orange rounded-full px-6 text-white flex mx-auto items-center gap-2"><span className='hidden xl:flex'><IoPersonOutline /></span>Login</a>
                 </div>
             </div>
         </header>
