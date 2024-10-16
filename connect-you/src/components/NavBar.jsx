@@ -97,7 +97,7 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {/*Search Button*/}
-                    <button className="btn btn-ghost btn-circle hidden md:flex">
+                    <button className="btn btn-ghost btn-circle items-center mx-auto xl:mx-10 hidden md:flex">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -112,7 +112,7 @@ const NavBar = () => {
                         </svg>
                     </button>
                     {/*Cart Button*/}
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle mr-3 items-center justify-center hidden md:flex">
+                    {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle mr-3 items-center justify-center hidden md:flex">
                     <div className="indicator">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@ const NavBar = () => {
                     </svg>
                     <span className="badge badge-sm indicator-item">8</span>
                     </div>
-                    </div>
+                    </div> */}
                     <a className="btn bg-orange rounded-full px-6 text-white flex mx-auto items-center gap-2"><span className='hidden xl:flex'><IoPersonOutline /></span>Login</a>
                 </div>
             </div>
