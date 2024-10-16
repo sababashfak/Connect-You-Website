@@ -44,14 +44,13 @@ const NavBar = () => {
             <details>
                 <summary>Find Event</summary>
                 <ul className="p-2">
-                    <li><a>Search From All</a></li>
-                    <li><a>Reunion</a></li>
-                    <li><a>Univarsity</a></li>
-                    <li><a>Music / Concert</a></li>
-                    <li><a>Festival</a></li>
-                    <li><a>Skill Development</a></li>
-                    <li><a>Business</a></li>
-                    <li><a>Travel</a></li>
+                    <li><a href='/event'>Search From All</a></li>
+                    <li><a href='/reunion'>Reunion</a></li>
+                    <li><a href='/music'>Music / Concert</a></li>
+                    <li><a href='/fest'>Festival</a></li>
+                    <li><a href='/skill'>Skill Development</a></li>
+                    <li><a href='/seminar'>Seminar</a></li>
+                    <li><a href='/expo'>Expo</a></li>
                     
                     
                 </ul>
@@ -98,7 +97,7 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {/*Search Button*/}
-                    <button className="btn btn-ghost btn-circle hidden md:flex">
+                    <button className="btn btn-ghost btn-circle items-center mx-auto xl:mx-10 hidden md:flex">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -113,7 +112,7 @@ const NavBar = () => {
                         </svg>
                     </button>
                     {/*Cart Button*/}
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle mr-3 items-center justify-center hidden md:flex">
+                    {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle mr-3 items-center justify-center hidden md:flex">
                     <div className="indicator">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -129,8 +128,8 @@ const NavBar = () => {
                     </svg>
                     <span className="badge badge-sm indicator-item">8</span>
                     </div>
-                    </div>
-                    <a className="btn bg-orange rounded-full px-6 text-white flex mx-auto items-center gap-2"><span className='hidden xl:flex'><IoPersonOutline /></span>SignUp / Login</a>
+                    </div> */}
+                    <a className="btn bg-orange rounded-full px-6 text-white flex mx-auto items-center gap-2"><span className='hidden xl:flex'><IoPersonOutline /></span>Login</a>
                 </div>
             </div>
         </header>
